@@ -1,10 +1,13 @@
 #ifndef IDataCollection_HH
 #define IDataCollection_HH
 
+#include <TObject.h>
+#include <RooInt.h>
+
 namespace COMET
 { class IDataCollection; }
 
-class COMET::IDataCollection {
+class COMET::IDataCollection : public TObject {
 
   public:
     IDataCollection();
@@ -19,6 +22,8 @@ class COMET::IDataCollection {
     double GetCurrent() const;
     double GetVoltage() const;
     double GetTime   () const;
+
+    ClassDef(COMET::IDataCollection, 1);
 
   private:
     double fTime;
